@@ -1,41 +1,14 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Check from './Check';
+import CheckList from './CheckList';
+import Summary from './Summary';
 
 class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-        <Check />
-
+        <Summary />
+        <CheckList />
       </div>
     );
   }

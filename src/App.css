@@ -10,6 +10,7 @@ header {
   flex: 0 0 44px;
   padding: 0 40px;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 
@@ -19,17 +20,21 @@ header {
   background-image: url(/miniLogo.jpg);
 }
 
+.profile {
+  margin-top: 10px;
+}
+
 .main {
   display: flex;
   flex: 1;
-  padding: 0 40px;
-  overflow-y: scroll;
+  width: 100%;
 }
 
 .footerNav {
   display: flex;
   flex: 0 0 44px;
   flex-direction: row;
+  border-top: 1px solid rgba(0,0,0,.0975);
 }
 
 .navButton {

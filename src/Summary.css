@@ -1,11 +1,14 @@
-.check {
+.summary {
   display: flex;
   flex-direction: row;
   height: 30px;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  padding: 10px 40px;
 }
 
-.checkProfit {
+.summaryProfit {
   color: #62B97F;
 }
