@@ -1,0 +1,63 @@
+.miniHelperApp {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+header {
+  display: flex;
+  flex: 0 0 44px;
+  padding: 0 40px;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+}
+
+.headerLogo {
+  width: 150px;
+  height: 30px;
+  background-image: url(/miniLogo.jpg);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  padding: 0 40px;
+  overflow-y: scroll;
+}
+
+.footerNav {
+  display: flex;
+  flex: 0 0 44px;
+  flex-direction: row;
+}
+
+.navButton {
+  width: 32px;
+  height: 32px;
+}
+
+.homeButton {
+  background-image: url(/homeButton32.jpg);
+}
+
+.addButton {
+  background-image: url(/addButton32.jpg);
+}
+
+.historyButton {
+  background-image: url(/historyButton32.jpg);
+}
+
+.footerNav a {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 1690px) { }
+@media all and (max-width: 1280px) { }
+@media all and (max-width: 980px) { }
+@media all and (max-width: 736px) { }
+@media all and (max-width: 480px) { }

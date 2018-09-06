@@ -1,0 +1,11 @@
+.check {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkProfit {
+  color: #62B97F;
+}
