@@ -1,45 +1,51 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  Switch,
   Route,
-  Link
+  Redirect
 } from 'react-router-dom';
-
-import Home from './Home';
-import AddCheck from './AddCheck';
-import History from './History';
-import './App.css';
+import firebase from './firebase';
+import MainScreen from './MainScreen';
+import LandingScreen from './LandingScreen';
+import Spinner from './Spinner';
 
 class App extends Component {
-  render() {
-    return (
-    <Router>
-      <div className="miniHelperApp">
-        <header>
-          <div className="headerLogo" />
-          <span className="profile">
-            김덕연
-          </span>
-        </header>
-        <div className="main">
-          <Route exact path="/" component={Home} />
-          <Route path="/addCheck" component={AddCheck} />
-          <Route path="/history" component={History} />
-        </div>
-        <div className="footerNav">
-          <Link to="/">
-            <div className="navButton homeButton" />
-          </Link>
-          <Link to="/addCheck">
-            <div className="navButton addButton" />
-          </Link>
-          <Link to="/history">
-            <div className="navButton historyButton" />
-          </Link>
-        </div>
-      </div>
-    </Router>
+  constructor(props){
+    super(props);
 
+    this.state = {
+      loading: true,
+      user: null
+    }
+  }
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(user => {
+      user
+        ? this.setState({ 
+          user,
+          loading: false
+         })
+        : this.setState({ 
+          user: null,
+          loading: false
+         });
+    });
+  }
+
+  render() {
+    return (      
+      <Switch>
+        <Route path="/landing" component={LandingScreen} />
+        <Route path="/" render={props => 
+          this.state.loading ? (
+            <Spinner />
+          ) :
+          this.state.user ? (
+            <MainScreen />
+          ) : 
+          <Redirect to="/landing" />
+        } />
+      </Switch>
     );
   }
 }
