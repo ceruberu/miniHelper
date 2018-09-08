@@ -4,7 +4,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import firebase from './firebase';
+import { firebase } from './firebase';
 import MainScreen from './MainScreen';
 import LandingScreen from './LandingScreen';
 import Spinner from './Spinner';
@@ -35,7 +35,15 @@ class App extends Component {
   render() {
     return (      
       <Switch>
-        <Route path="/landing" component={LandingScreen} />
+        <Route path="/landing" render={props => 
+          this.state.loading ? (
+            <Spinner />
+          ) :
+          this.state.user ? (
+            <Redirect to="/" />
+          ) : 
+          <LandingScreen />
+        } />
         <Route path="/" render={props => 
           this.state.loading ? (
             <Spinner />
